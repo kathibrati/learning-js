@@ -1,5 +1,13 @@
 //Algorithms and Data Structures
 
+//Returning true/false without if else
+function isLess(a, b) {
+  
+      return a < b;
+  }
+  
+console.log(isLess(10, 15));
+
 function chainToSwitch(val) {
     var answer = "";
     // Only change code below this line
