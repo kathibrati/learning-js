@@ -1,4 +1,67 @@
-//Algorithms and Data Structures
+/*
+Algorithms and Data Structures
+The second way to access the properties of an object is bracket notation ([]). 
+If the property of the object you are trying to access has a space in its name, 
+you will need to use bracket notation.
+accessing objekt properties .notation var gimme = testObj.prop1;
+*/
+// Setup
+var testObj = {
+  12: "Namath",
+  16: "Montana",
+  19: "Unitas"
+};
+
+// Gimme Montana
+
+var playerNumber = 16;       // Change this line
+var player = testObj[playerNumber];   // Change this line
+console.log(player);
+/*
+var myDog = {
+  // Only change code below this line
+  "name": "Doggo",
+  "legs": "4",
+  "tails": "1",
+  "friends": ["John","Ada"]
+  
+  // Only change code above this line
+  };
+
+//card counting
+var count = 0;
+
+function cc(card) {
+
+  switch (card) {
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+      count++;
+      break;
+    case 10:
+    case "J":
+    case "Q":
+    case "K":
+    case "A":
+      count--;
+      break;
+  }
+  if (count > 0) {
+    return count + " Bet";
+  } else {
+    return count + " Hold";
+  }
+
+}
+
+console.log(cc(2));
+console.log(cc(3));
+console.log(cc(7));
+console.log(cc('K'));
+console.log(cc('A'));
 
 //Returning true/false without if else
 function isLess(a, b) {
@@ -155,3 +218,4 @@ function trueOrFalse(wasThatTrue) {
   return "No, that was false";
 
   }
+  */
