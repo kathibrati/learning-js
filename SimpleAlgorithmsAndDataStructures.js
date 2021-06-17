@@ -1,5 +1,110 @@
+//Algorithms and Data Structures
+
+var myPlants = [
+  {
+    type: "flowers",
+    list: [
+      "rose",
+      "tulip",
+      "dandelion"
+    ]
+  },
+  {
+    type: "trees",
+    list: [
+      "fir",
+      "pine",
+      "birch"
+    ]
+  }
+];
+var secondTree = myPlants[1].list[1];
+//nested objects access to properties
+var myStorage = {
+  "car": {
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "crumbs"
+     },
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
+
+var gloveBoxContents = myStorage.car.inside["glove box"];
+
+//Object
+var myMusic = [
+  {   "artist": "Billy Joel",
+      "title": "Piano Man",
+      "release_year": 1973,
+      "formats": [
+        "CD",
+        "8T",
+        "LP"
+      ],
+          "gold": true,
+   },
+    {
+      "artist": "Kalinka",
+      "title": "When u try your best but you dont suceed",
+      "release_year": 1991,
+      "formats": [
+        "Diskettelul",
+        "8T",
+        "LP"
+      ],
+          "gold": true,
+  }
+  
+  ];
+
+//Cheking if the property of an objects exists .hasOwnProperty(propname) returns true/false
+
+function checkObj(obj, checkProp) {
+  // Only change code below this line
+  if (obj.hasOwnProperty(checkProp)) {
+    return obj[checkProp];
+  }
+  return "Not Found";
+  // Only change code above this line
+}
+
+function phoneticLookup(val) {
+  var result = "";
+
+ var lookup = {
+    "alpha": "Adams",
+    "bravo": "Boston",
+    "charlie": "Chicago",
+    "delta": "Denver",
+    "echo": "Easy",
+    "foxtrot": "Frank",
+    " " : "undefined",
+    
+  };
+  result = lookup[val];
+
+  return result;
+}
+
+phoneticLookup("charlie");
+
+var myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"],
+};
+
+//Adding an property to an object
+myDog.bark = "woof";
+
+//Delete an property from an object
+delete myDog.legs;
+
 /*
-Algorithms and Data Structures
 The second way to access the properties of an object is bracket notation ([]). 
 If the property of the object you are trying to access has a space in its name, 
 you will need to use bracket notation.
