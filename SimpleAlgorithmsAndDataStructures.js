@@ -1,3 +1,52 @@
+// Setup
+var contacts = [
+  {
+      "firstName": "Akira",
+      "lastName": "Laine",
+      "number": "0543236543",
+      "likes": ["Pizza", "Coding", "Brownie Points"]
+  },
+  {
+      "firstName": "Harry",
+      "lastName": "Potter",
+      "number": "0994372684",
+      "likes": ["Hogwarts", "Magic", "Hagrid"]
+  },
+  {
+      "firstName": "Sherlock",
+      "lastName": "Holmes",
+      "number": "0487345643",
+      "likes": ["Intriguing Cases", "Violin"]
+  },
+  {
+      "firstName": "Kristian",
+      "lastName": "Vos",
+      "number": "unknown",
+      "likes": ["JavaScript", "Gaming", "Foxes"]
+  }
+];
+
+
+function lookUpProfile(name, prop) {
+// Only change code below this line
+for(var i = 0; i < contacts.length; i++) {
+  if(name === contacts[i].firstName && contacts[i].hasOwnProperty(prop)) {
+      return contacts[i][prop];
+//sobald die 2 Blöcke existieren wird das erste IF nicht mehr ausgeführt 
+  } else if(name !== contacts[i].firstName)  {
+      return "No such contact";
+  } else {
+      return "No such property";
+  }
+
+}
+// Only change code above this line
+}
+
+lookUpProfile("Akira", "likes");
+
+
+/*
 function rangeOfNumbers(startNum, endNum) {
   if (startNum === endNum) {
   return  [startNum];
@@ -10,7 +59,7 @@ function rangeOfNumbers(startNum, endNum) {
 
 
 };
-/*
+
 Use Recursion to Create a Countdown
 In a previous challenge, you learned how to use recursion to replace a for loop. Now, let's look at a more complex function that returns an array of consecutive integers starting with 1 through the number passed to the function.
 
@@ -29,7 +78,7 @@ function countup(n) {
 }
 console.log(countup(5));
 The value [1, 2, 3, 4, 5] will be displayed in the console.
-*/
+
 // Only change code below this line
 function countdown(n){
   if (n < 1) {
@@ -53,7 +102,7 @@ The conditional operator, also called the ternary operator, can be used as a one
 The syntax is a ? b : c, where a is the condition, b is the code to run when the condition returns true, and c is the code to run when the condition returns false.
 
 The following function uses an if/else statement to check a condition:
-*/
+
 function checkEqual(a, b) {
   return a === b ? "Equal" : "Not Equal";
   }
@@ -79,7 +128,7 @@ And here's an example:
 
 var a = parseInt("11", 2);
 The radix variable says that 11 is in the binary system, or base 2. This example converts the string 11 to an integer 3
-*/
+
 function convertToInteger(str) {
   return parseInt(str, 2);
   }
@@ -102,7 +151,7 @@ To do this, we'll define a minimum number min and a maximum number max.
 Here's the formula we'll use. Take a moment to read it and try to understand what this code is doing:
 
 Math.floor(Math.random() * (max - min + 1)) + min
-*/
+
 
 function randomRange(myMin, myMax) {
   // Only change code below this line
@@ -128,7 +177,7 @@ if(randomWholeNum  >=0 && randomWholeNum  < 10) {
 JavaScript has a Math.random() function that generates a random decimal number between 0 (inclusive) and 1 (exclusive). 
 Thus Math.random() can return a 0 but never return a 1.
 Note: Like Storing Values with the Assignment Operator, all function calls will be resolved before the return executes,
-so we can return the value of the Math.random() function. */
+so we can return the value of the Math.random() function. 
 function randomFraction() {
 
   // Only change code below this line
@@ -190,7 +239,7 @@ lookUpProfile("Akira", "likes");
 
 
 
-/*
+
 function sum(arr, n) {
   // Only change code below this line
     if (n <= 0) {
