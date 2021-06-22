@@ -26,35 +26,47 @@ var contacts = [
   }
 ];
 
-
 function lookUpProfile(name, prop) {
-  // Only change code below this line
+  for (var i = 0; i < contacts.length; i++) {
+    if (name === contacts[i].firstName) {
+      if (contacts[i].hasOwnProperty(prop)) {
+        return contacts[i][prop]
+      } else {
+        /* prop nicht gefunden! */
+      }
+    }
+  }
+
+  return "nicht gefunden"
+}
+
+function lookUpProfile2(name, prop) {
+  // mit for das ganze Array durchgehen
   for (var i = 0; i < contacts.length; i++) {
     var returnValue = "";
-    console.log("BEFORE IF 1: i " + i + "name " + name + " prop " + prop);
+
     if (name === contacts[i].firstName) {
-      console.log("IF 1: " + i + "name " + name + " prop " + prop + " value " + contacts[i][prop]);
+
       if (contacts[i].hasOwnProperty(prop)) {
-        console.log("IF 2: " + i + "name " + name + " prop " + prop + " return " + contacts[i][prop]);
         returnValue = contacts[i][prop];
         break;
       } else {
-        console.log("No Prop: " + i + "name " + name + " prop " + prop);
+
         returnValue = "No such property";
         break;
       }
     } else {
-      console.log("IF 3: " + i + "name " + name + " prop " + prop);
+
       returnValue = "No such contact";
     }
 
   }
-  console.log(" return " + returnValue);
+
   return returnValue;
   // Only change code above this line
 }
 
-lookUpProfile("Akira", "likes");
+console.log(lookUpProfile("Kristian", "likes"));
 /*
 function rangeOfNumbers(startNum, endNum) {
   if (startNum === endNum) {
