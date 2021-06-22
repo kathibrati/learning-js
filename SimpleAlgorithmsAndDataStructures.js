@@ -1,51 +1,60 @@
 // Setup
 var contacts = [
   {
-      "firstName": "Akira",
-      "lastName": "Laine",
-      "number": "0543236543",
-      "likes": ["Pizza", "Coding", "Brownie Points"]
+    "firstName": "Akira",
+    "lastName": "Laine",
+    "number": "0543236543",
+    "likes": ["Pizza", "Coding", "Brownie Points"]
   },
   {
-      "firstName": "Harry",
-      "lastName": "Potter",
-      "number": "0994372684",
-      "likes": ["Hogwarts", "Magic", "Hagrid"]
+    "firstName": "Harry",
+    "lastName": "Potter",
+    "number": "0994372684",
+    "likes": ["Hogwarts", "Magic", "Hagrid"]
   },
   {
-      "firstName": "Sherlock",
-      "lastName": "Holmes",
-      "number": "0487345643",
-      "likes": ["Intriguing Cases", "Violin"]
+    "firstName": "Sherlock",
+    "lastName": "Holmes",
+    "number": "0487345643",
+    "likes": ["Intriguing Cases", "Violin"]
   },
   {
-      "firstName": "Kristian",
-      "lastName": "Vos",
-      "number": "unknown",
-      "likes": ["JavaScript", "Gaming", "Foxes"]
+    "firstName": "Kristian",
+    "lastName": "Vos",
+    "number": "unknown",
+    "likes": ["JavaScript", "Gaming", "Foxes"]
   }
 ];
 
 
 function lookUpProfile(name, prop) {
-// Only change code below this line
-for(var i = 0; i < contacts.length; i++) {
-  if(name === contacts[i].firstName && contacts[i].hasOwnProperty(prop)) {
-      return contacts[i][prop];
-//sobald die 2 Blöcke existieren wird das erste IF nicht mehr ausgeführt 
-  } else if(name !== contacts[i].firstName)  {
-      return "No such contact";
-  } else {
-      return "No such property";
-  }
+  // Only change code below this line
+  for (var i = 0; i < contacts.length; i++) {
+    var returnValue = "";
+    console.log("BEFORE IF 1: i " + i + "name " + name + " prop " + prop);
+    if (name === contacts[i].firstName) {
+      console.log("IF 1: " + i + "name " + name + " prop " + prop + " value " + contacts[i][prop]);
+      if (contacts[i].hasOwnProperty(prop)) {
+        console.log("IF 2: " + i + "name " + name + " prop " + prop + " return " + contacts[i][prop]);
+        returnValue = contacts[i][prop];
+        break;
+      } else {
+        console.log("No Prop: " + i + "name " + name + " prop " + prop);
+        returnValue = "No such property";
+        break;
+      }
+    } else {
+      console.log("IF 3: " + i + "name " + name + " prop " + prop);
+      returnValue = "No such contact";
+    }
 
-}
-// Only change code above this line
+  }
+  console.log(" return " + returnValue);
+  return returnValue;
+  // Only change code above this line
 }
 
 lookUpProfile("Akira", "likes");
-
-
 /*
 function rangeOfNumbers(startNum, endNum) {
   if (startNum === endNum) {
@@ -106,15 +115,15 @@ The following function uses an if/else statement to check a condition:
 function checkEqual(a, b) {
   return a === b ? "Equal" : "Not Equal";
   }
-  
+
   checkEqual(1, 2);
 //multiple conditional operators
   function checkSign(num) {
-    return (num > 0) ? "positive" 
-      : (num < 0) ? "negative" 
+    return (num > 0) ? "positive"
+      : (num < 0) ? "negative"
       : "zero";
   }
-  
+
   checkSign(10);
 
 
@@ -132,7 +141,7 @@ The radix variable says that 11 is in the binary system, or base 2. This example
 function convertToInteger(str) {
   return parseInt(str, 2);
   }
-  
+
   convertToInteger("10011");
 
 
@@ -158,7 +167,7 @@ function randomRange(myMin, myMax) {
   var myNum = Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
   if(myNum >= myMin && myNum <= myMax) {
       return myNum;
-  
+
   }
   // Only change code above this line
 }
@@ -166,7 +175,7 @@ function randomRange(myMin, myMax) {
 function randomWholeNum() {
 
   // Only change code below this line
-var randomWholeNum; 
+var randomWholeNum;
 randomWholeNum  = Math.floor(Math.random() *10);
 if(randomWholeNum  >=0 && randomWholeNum  < 10) {
   return randomWholeNum ;
@@ -174,10 +183,10 @@ if(randomWholeNum  >=0 && randomWholeNum  < 10) {
 }
 
 /* Random numbers are useful for creating random behavior.
-JavaScript has a Math.random() function that generates a random decimal number between 0 (inclusive) and 1 (exclusive). 
+JavaScript has a Math.random() function that generates a random decimal number between 0 (inclusive) and 1 (exclusive).
 Thus Math.random() can return a 0 but never return a 1.
 Note: Like Storing Values with the Assignment Operator, all function calls will be resolved before the return executes,
-so we can return the value of the Math.random() function. 
+so we can return the value of the Math.random() function.
 function randomFraction() {
 
   // Only change code below this line
@@ -226,8 +235,8 @@ if(contacts[i].firstName === name) {
       } else if(contacts[i].hasOwnProperty(prop) !== true) {
   return "No such property";
       }
-  } 
-} 
+  }
+}
 return "No such contact";
 
 
@@ -414,7 +423,7 @@ var myMusic = [
       ],
           "gold": true,
   }
-  
+
   ];
 
 //Cheking if the property of an objects exists .hasOwnProperty(propname) returns true/false
@@ -439,7 +448,7 @@ function phoneticLookup(val) {
     "echo": "Easy",
     "foxtrot": "Frank",
     " " : "undefined",
-    
+
   };
   result = lookup[val];
 
@@ -462,8 +471,8 @@ myDog.bark = "woof";
 delete myDog.legs;
 
 /*
-The second way to access the properties of an object is bracket notation ([]). 
-If the property of the object you are trying to access has a space in its name, 
+The second way to access the properties of an object is bracket notation ([]).
+If the property of the object you are trying to access has a space in its name,
 you will need to use bracket notation.
 accessing objekt properties .notation var gimme = testObj.prop1;
 */
@@ -487,7 +496,7 @@ var myDog = {
   "legs": "4",
   "tails": "1",
   "friends": ["John","Ada"]
-  
+
   // Only change code above this line
   };
 
@@ -528,10 +537,10 @@ console.log(cc('A'));
 
 //Returning true/false without if else
 function isLess(a, b) {
-  
+
       return a < b;
   }
-  
+
 console.log(isLess(10, 15));
 
 function chainToSwitch(val) {
@@ -541,7 +550,7 @@ function chainToSwitch(val) {
     case "bob":
       answer = "Marley";
       break;
-    case 42: 
+    case 42:
       answer = "The Answer";
       break;
     case 1:
@@ -554,11 +563,11 @@ function chainToSwitch(val) {
       answer = "Ate Nine";
       break;
     }
-  
+
     // Only change code above this line
     return answer;
   }
-  
+
   console.log(chainToSwitch(7));
 
 function sequentialSizes(val) {
@@ -581,12 +590,12 @@ function sequentialSizes(val) {
         answer = "High";
         break;
     }
-  
-  
+
+
     // Only change code above this line
     return answer;
   }
-  
+
   sequentialSizes(1);
 
 function caseInSwitch(val) {
@@ -607,12 +616,12 @@ function caseInSwitch(val) {
       break;
     default:
       answer = "Wrong input."
-      
+
   }
     // Only change code above this line
     return answer;
   }
-  
+
   console.log(caseInSwitch(1));
 
 var names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home!"];
@@ -643,18 +652,18 @@ console.log("Golf Test: " + golfScore(4, 3));
 function testElse(val) {
     var result = "";
     // Only change code below this line
-  
+
     if (val > 5) {
-  
+
       result = "Bigger than 5";
     } else {
       result = "5 or Smaller";
     }
-  
+
     // Only change code above this line
     return result;
   }
-  
+
   testElse(4);
 
 // === Strict Equality Operator NO Type Conversion
@@ -667,9 +676,9 @@ function compareEquality(a, b) {
     }
     return "Not Equal";
   }
-  
+
   console.log(compareEquality(10, "10"));
-  
+
 
 
 //boolean and if-statement
